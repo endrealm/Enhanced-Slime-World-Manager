@@ -12,6 +12,8 @@ public class StringSlimeProperty extends SlimeProperty<String> {
 
     public StringSlimeProperty(String nbtName, PropertyType type, String defaultValue, Function<String, Boolean> validator) {
         super(nbtName, type, defaultValue, validator,
-                (value, parent, self) -> parent.put(self.getNbtName(), new StringTag(self.getNbtName(), value)));
+                (value, parent, self) -> parent.put(self.getNbtName(), new StringTag(self.getNbtName(), value)),
+                (parent, self) -> parent.getStringValue(self.getNbtName()).orElse(self.getDefaultValue())
+        );
     }
 }

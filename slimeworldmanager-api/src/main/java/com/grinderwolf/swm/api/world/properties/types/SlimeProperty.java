@@ -16,17 +16,19 @@ public class SlimeProperty<T> {
     private final String nbtName;
     private final PropertyType type;
     private final ToCompound<T> toCompound;
+    private final FromCompound<T> fromCompound;
     private final T defaultValue;
     private final Function<T, Boolean> validator;
 
-    public SlimeProperty(String nbtName, PropertyType type, T defaultValue, ToCompound<T> toCompound) {
-        this(nbtName, type, defaultValue, null, toCompound);
+    public SlimeProperty(String nbtName, PropertyType type, T defaultValue, ToCompound<T> toCompound, FromCompound<T> fromCompound) {
+        this(nbtName, type, defaultValue, null, toCompound, fromCompound);
     }
 
-    public SlimeProperty(String nbtName, PropertyType type, T defaultValue, Function<T, Boolean> validator, ToCompound<T> toCompound) {
+    public SlimeProperty(String nbtName, PropertyType type, T defaultValue, Function<T, Boolean> validator, ToCompound<T> toCompound, FromCompound<T> fromCompound) {
         this.nbtName = nbtName;
         this.type = type;
         this.toCompound = toCompound;
+        this.fromCompound = fromCompound;
 
         if (defaultValue != null) {
             if (!type.getValueClazz().isInstance(defaultValue)) {
@@ -47,5 +49,10 @@ public class SlimeProperty<T> {
     @FunctionalInterface
     public interface ToCompound<T> {
         void convert(T value, CompoundMap parent, SlimeProperty<T> self);
+    }
+
+    @FunctionalInterface
+    public interface FromCompound<T> {
+        T convert(CompoundTag parent, SlimeProperty<T> self);
     }
 }

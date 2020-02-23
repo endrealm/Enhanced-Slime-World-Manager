@@ -186,21 +186,12 @@ public class SlimePropertyMap {
      * @param compound A {@link CompoundTag} to get the properties from.
      * @return A {@link SlimePropertyMap} with the properties from the provided {@link CompoundTag}.
      */
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static SlimePropertyMap fromCompound(CompoundTag compound) {
         Map<SlimeProperty<?>, Object> values = new HashMap<>();
 
-        for (SlimeProperty<?> property : SlimeProperties.VALUES) {
-            switch (property.getType()) {
-                case STRING:
-                    compound.getStringValue(property.getNbtName()).ifPresent((value) -> values.put(property, value));
-                    break;
-                case BOOLEAN:
-                    compound.getByteValue(property.getNbtName()).map((value) -> value == 1).ifPresent((value) -> values.put(property, value));
-                    break;
-                case INT:
-                    compound.getIntValue(property.getNbtName()).ifPresent((value) -> values.put(property, value));
-                    break;
-            }
+        for (SlimeProperty property : SlimeProperties.VALUES) {
+            values.put(property, property.getFromCompound().convert(compound, property));
         }
 
         return new SlimePropertyMap(values);
