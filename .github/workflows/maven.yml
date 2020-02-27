@@ -26,3 +26,18 @@ jobs:
         wget -O spigot-1.8.8.jar https://cdn.getbukkit.org/spigot/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar && mvn install:install-file -Dfile=spigot-1.8.8.jar -DgroupId=org.spigotmc -DartifactId=spigot -Dversion=1.8.8-R0.1-SNAPSHOT -Dpackaging=jar
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload Plugin artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: plugin
+        path: slimeworldmanager-plugin/target
+    - name: Upload API artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: api
+        path: slimeworldmanager-plugin/target
+    - name: Upload Classmodifier artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: classmodifier
+        path: slimeworldmanager-classmodifier/target
