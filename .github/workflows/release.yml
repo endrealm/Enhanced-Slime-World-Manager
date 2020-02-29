@@ -2,11 +2,8 @@ name: Release CI
 
 on:
   push:
-    branches:
-      - testing
-#      - master
-#    tags:
-#      - v*
+    tags:
+      - v*
 
 jobs:
   build:
@@ -37,6 +34,8 @@ jobs:
           FTP_USR: ${{ secrets.FTP_USR }}
           FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
+          mvn versions:set -DnewVersion=${GITHUB_REF/refs\/tags\//}
+          mvn versions:update-child-modules
           mvn -B clean deploy --file pom.xml -P release -X -s ci_settings.xml
 
       - name: Upload Plugin artifact
@@ -50,12 +49,6 @@ jobs:
         with:
           name: api
           path: slimeworldmanager-api/target
-
-      - name: Upload Docs artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: api
-          path: slimeworldmanager-api/docs
 
       - name: Upload Classmodifier artifact
         uses: actions/upload-artifact@v1
