@@ -34,8 +34,6 @@ jobs:
 
       - name: Deploy with Maven
         run: |
-#          mvn versions:set -DnewVersion=${GITHUB_REF/refs\/tags\//}
-#          mvn versions:update-child-modules
           mvn clean deploy --file pom.xml -P release -s ci_settings.xml
 
       - name: Upload Plugin artifact
