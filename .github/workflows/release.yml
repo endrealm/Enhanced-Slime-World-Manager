@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy with Maven
         run: |
-          mvn -s ci_settings.xml clean deploy --file pom.xml -P release -X
+          mvn -B clean deploy --file pom.xml -P release -X -s ci_settings.xml
 
       - name: Upload Plugin artifact
         uses: actions/upload-artifact@v1
