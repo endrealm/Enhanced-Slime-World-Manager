@@ -9,7 +9,6 @@ import com.grinderwolf.eswm.plugin.commands.CommandManager;
 import com.grinderwolf.eswm.plugin.config.ConfigManager;
 import com.grinderwolf.eswm.plugin.config.WorldData;
 import com.grinderwolf.eswm.plugin.config.WorldsConfig;
-import com.grinderwolf.swm.plugin.config.*;
 import com.grinderwolf.eswm.plugin.log.Logging;
 import lombok.Getter;
 import org.bukkit.*;

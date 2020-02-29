@@ -1,7 +1,6 @@
 package com.grinderwolf.eswm.plugin.commands;
 
 import com.grinderwolf.eswm.plugin.commands.sub.*;
-import com.grinderwolf.swm.plugin.commands.sub.*;
 import com.grinderwolf.eswm.plugin.log.Logging;
 import lombok.Getter;
 import org.bukkit.ChatColor;

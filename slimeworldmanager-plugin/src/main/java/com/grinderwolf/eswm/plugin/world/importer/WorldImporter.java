@@ -11,7 +11,6 @@ import com.grinderwolf.eswm.api.world.properties.SlimePropertyMap;
 import com.grinderwolf.eswm.nms.CraftSlimeChunk;
 import com.grinderwolf.eswm.nms.CraftSlimeChunkSection;
 import com.grinderwolf.eswm.nms.CraftSlimeWorld;
-import com.grinderwolf.swm.nms.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
