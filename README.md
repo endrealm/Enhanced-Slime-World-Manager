@@ -1,50 +1,31 @@
-# Slime World Manager [![Build Status](https://travis-ci.com/Grinderwolf/Slime-World-Manager.svg?branch=master)](https://travis-ci.com/Grinderwolf/Slime-World-Manager)
+# Enhanced Slime World Manager ![Maven Build](https://github.com/endrealm/Enhanced-Slime-World-Manager/workflows/Maven%20Build/badge.svg)
+
+**Legacy Slime World Manager Discord:**
 
 [<img src="https://discordapp.com/assets/e4923594e694a21542a489471ecffa50.svg" alt="" height="55" />](https://discord.gg/P9Pd58d)
 
 Slime World Manager is a Minecraft plugin that implements the Slime Region Format, developed by the Hypixel Dev Team.
  Its goal is to provide server administrators with an easy-to-use tool to load worlds faster and save space.
+ 
+ > Enhanced Slime World Manager is a maintained and improved fork of the original slime world manager. Projects based on the original project will not directly be compatible, *but* can easily be converted.
 
 #### Releases
 
-SWM releases can be found [here](https://www.spigotmc.org/resources/slimeworldmanager.69974/history).
+**NO DOWNLOADS FOR E-SWM AVAILEABLE YET**
 
-## Using SWM in your plugin
+**Legacy***
+*SWM releases can be found [here](https://www.spigotmc.org/resources/slimeworldmanager.69974/history).*
+
+## Using E-SWM in your plugin
 
 #### Maven
-```
-<repositories>
-  <repository>
-    <id>glaremasters</id>
-    <url>https://repo.glaremasters.me/repository/concuncan/</url>
-  </repository>
-</repositories>
-```
-
-```
-<dependencies>
-  <dependency>
-    <groupId>com.grinderwolf</groupId>
-    <artifactId>slimeworldmanager-api</artifactId>
-    <version>INSERT LATEST VERSION HERE</version>
-  </dependency>
-</dependencies>
-```
+**No repo yet**
 
 #### Gradle
-```
-repositories {
-    maven { url "https://repo.glaremasters.me/repository/concuncan/" }
-}
-
-dependencies {
-    compileOnly group: "com.grinderwolf", name: "slimeworldmanager-api", version: "INSERT LATEST VERSION HERE";
-}
-```
+**No repo yet**
 
 #### Javadocs
-
-Javadocs can be found [here](https://grinderwolf.github.io/Slime-World-Manager/apidocs/).
+**Not visible on pages yet**
 
 ## Wiki Overview
  * Plugin Usage
@@ -68,12 +49,6 @@ Javadocs can be found [here](https://grinderwolf.github.io/Slime-World-Manager/a
 ## Credits
 
 Thanks to:
- * All the contributors who helped me by adding features to SWM.
- * [Glare](https://glaremasters.me) for providing me with a Maven repository.
+ * Everybody who [contributed](https://github.com/endrealm/Enhanced-Slime-World-Manager/graphs/contributors) and made this work <3
+ * Grinderwolf who created [the old SWM](https://github.com/Grinderwolf/Slime-World-Manager).
  * [Minikloon](https://twitter.com/Minikloon) and all the [Hypixel](https://twitter.com/HypixelNetwork) team for developing the SRF.
- 
-## YourKit
-
-YourKit supports open source projects with innovative and intelligent tools for monitoring and profiling Java and .NET applications. YourKit is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/), [YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/) and [YourKit YouMonitor](https://www.yourkit.com/youmonitor/).
-
-![YourKit](https://www.yourkit.com/images/yklogo.png)
