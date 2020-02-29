@@ -43,13 +43,19 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: plugin
-          path: slimeworldmanager-plugin/target/target
+          path: slimeworldmanager-plugin/target
 
       - name: Upload API artifact
         uses: actions/upload-artifact@v1
         with:
           name: api
           path: slimeworldmanager-api/target
+
+      - name: Upload Docs artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: api
+          path: slimeworldmanager-api/docs
 
       - name: Upload Classmodifier artifact
         uses: actions/upload-artifact@v1
