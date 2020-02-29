@@ -34,22 +34,22 @@ jobs:
 
       - name: Deploy with Maven
         run: |
-          mvn -s ci_settings.xml clean deploy --file pom.xml -P release
+          mvn -s ci_settings.xml clean deploy --file pom.xml -P release -X
 
       - name: Upload Plugin artifact
         uses: actions/upload-artifact@v1
         with:
           name: plugin
-          path: '*slimeworldmanager-plugin/target/*slimeworldmanager-*.jar'
+          path: '*slimeworldmanager-plugin/target/target'
 
       - name: Upload API artifact
         uses: actions/upload-artifact@v1
         with:
           name: api
-          path: '*slimeworldmanager-api/*slimeworldmanager-*.jar'
+          path: '*slimeworldmanager-api/target'
 
       - name: Upload Classmodifier artifact
         uses: actions/upload-artifact@v1
         with:
           name: classmodifier
-          path: '*slimeworldmanager-classmodifier/*slimeworldmanager-*.jar'
+          path: '*slimeworldmanager-classmodifier/target'
