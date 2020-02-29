@@ -91,20 +91,14 @@
           <build>
               <plugins>
                   <plugin>
-                      <groupId>cy.github</groupId>
-                      <artifactId>github-release-plugin</artifactId>
-                      <version>0.5.1</version>
-                      <configuration>
-                          <tagName>${project.version}</tagName>
-                          <releaseTitle>${project.artifactId}-${project.version}</releaseTitle>
-                          <serverId>github</serverId>
-                      </configuration>
+                      <artifactId>maven-deploy-plugin</artifactId>
                       <executions>
                           <execution>
-                              <goals>
-                                  <goal>gh-upload</goal>
-                              </goals>
+                              <id>deploy</id>
                               <phase>deploy</phase>
+                              <goals>
+                                  <goal>deploy</goal>
+                              </goals>
                           </execution>
                       </executions>
                   </plugin>
@@ -113,11 +107,15 @@
       </profile>
   </profiles>
 
-  <distributionManagement>
+    <distributionManagement>
         <repository>
-            <id>glaremasters</id>
-            <url>https://repo.glaremasters.me/repository/concuncan/</url>
+            <id>ftp-repo</id>
+            <url>ftp://andrei1058.com/releases</url>
         </repository>
-  </distributionManagement>
+        <snapshotRepository>
+            <id>ftp-repo</id>
+            <url>ftp://andrei1058.com/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
