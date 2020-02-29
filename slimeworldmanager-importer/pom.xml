@@ -49,7 +49,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>com.grinderwolf.swm.importer.SWMImporter</Main-Class>
+                            <Main-Class>com.grinderwolf.eswm.importer.SWMImporter</Main-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>

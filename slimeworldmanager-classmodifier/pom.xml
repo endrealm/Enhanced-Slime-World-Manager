@@ -43,7 +43,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Premain-Class>com.grinderwolf.swm.clsm.NMSTransformer</Premain-Class>
+                            <Premain-Class>com.grinderwolf.eswm.clsm.NMSTransformer</Premain-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>

@@ -1,5 +1,5 @@
 {
-    if (com.grinderwolf.swm.clsm.ClassModifier.isCustomWorld($0.world)) {
+    if (ClassModifier.isCustomWorld($0.world)) {
         java.util.Iterator iterator = $0.chunks.values().iterator();
 
         while (iterator.hasNext()) {

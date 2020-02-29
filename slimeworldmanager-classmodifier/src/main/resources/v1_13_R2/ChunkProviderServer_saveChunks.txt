@@ -1,7 +1,7 @@
 {
-    if (com.grinderwolf.swm.clsm.ClassModifier.isCustomWorld($0.world)) {
+    if (ClassModifier.isCustomWorld($0.world)) {
         int i = 0;
-        $0.chunkScheduler.a(com.grinderwolf.swm.clsm.ClassModifier.BOOLEAN_SUPPLIER);
+        $0.chunkScheduler.a(ClassModifier.BOOLEAN_SUPPLIER);
 
         synchronized ($0.chunkLoader) {
             it.unimi.dsi.fastutil.objects.ObjectIterator objectiterator = $0.chunks.values().iterator();
