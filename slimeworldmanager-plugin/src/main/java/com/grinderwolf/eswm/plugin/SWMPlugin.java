@@ -6,7 +6,6 @@ import com.grinderwolf.eswm.api.SlimePlugin;
 import com.grinderwolf.eswm.api.exceptions.*;
 import com.grinderwolf.eswm.api.loaders.SlimeLoader;
 import com.grinderwolf.eswm.api.world.SlimeWorld;
-import com.grinderwolf.eswm.api.world.properties.SlimeProperties;
 import com.grinderwolf.eswm.api.world.properties.SlimePropertyMap;
 import com.grinderwolf.eswm.nms.CraftSlimeWorld;
 import com.grinderwolf.eswm.nms.SlimeNMS;
@@ -25,7 +24,6 @@ import com.grinderwolf.eswm.plugin.config.WorldData;
 import com.grinderwolf.eswm.plugin.config.WorldsConfig;
 import com.grinderwolf.eswm.plugin.upgrade.WorldUpgrader;
 import com.grinderwolf.eswm.plugin.commands.CommandManager;
-import com.grinderwolf.swm.plugin.config.*;
 import com.grinderwolf.eswm.plugin.loaders.LoaderUtils;
 import com.grinderwolf.eswm.plugin.log.Logging;
 import com.grinderwolf.eswm.plugin.update.Updater;
@@ -224,14 +222,6 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
     }
 
     @Override
-    public SlimeWorld loadWorld(SlimeLoader loader, String worldName, SlimeWorld.SlimeProperties properties) throws UnknownWorldException,
-            IOException, CorruptedWorldException, NewerFormatException, WorldInUseException {
-        Objects.requireNonNull(properties, "Properties cannot be null");
-
-        return loadWorld(loader, worldName, properties.isReadOnly(), propertiesToMap(properties));
-    }
-
-    @Override
     public SlimeWorld loadWorld(SlimeLoader loader, String worldName, boolean readOnly, SlimePropertyMap propertyMap) throws UnknownWorldException, IOException,
             CorruptedWorldException, NewerFormatException, WorldInUseException {
         Objects.requireNonNull(loader, "Loader cannot be null");
@@ -266,13 +256,6 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
     }
 
     @Override
-    public SlimeWorld createEmptyWorld(SlimeLoader loader, String worldName, SlimeWorld.SlimeProperties properties) throws WorldAlreadyExistsException, IOException {
-        Objects.requireNonNull(properties, "Properties cannot be null");
-
-        return createEmptyWorld(loader, worldName, properties.isReadOnly(), propertiesToMap(properties));
-    }
-
-    @Override
     public SlimeWorld createEmptyWorld(SlimeLoader loader, String worldName, boolean readOnly, SlimePropertyMap propertyMap) throws WorldAlreadyExistsException, IOException {
         Objects.requireNonNull(loader, "Loader cannot be null");
         Objects.requireNonNull(worldName, "World name cannot be null");
@@ -291,21 +274,6 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
         Logging.info("World " + worldName + " created in " + (System.currentTimeMillis() - start) + "ms.");
 
         return world;
-    }
-
-    private SlimePropertyMap propertiesToMap(SlimeWorld.SlimeProperties properties) {
-        SlimePropertyMap propertyMap = new SlimePropertyMap();
-
-        propertyMap.setInt(SlimeProperties.SPAWN_X, (int) properties.getSpawnX());
-        propertyMap.setInt(SlimeProperties.SPAWN_Y, (int) properties.getSpawnY());
-        propertyMap.setInt(SlimeProperties.SPAWN_Z, (int) properties.getSpawnZ());
-        propertyMap.setString(SlimeProperties.DIFFICULTY, Difficulty.getByValue(properties.getDifficulty()).name());
-        propertyMap.setBoolean(SlimeProperties.ALLOW_MONSTERS, properties.allowMonsters());
-        propertyMap.setBoolean(SlimeProperties.ALLOW_ANIMALS, properties.allowAnimals());
-        propertyMap.setBoolean(SlimeProperties.PVP, properties.isPvp());
-        propertyMap.setString(SlimeProperties.ENVIRONMENT, properties.getEnvironment());
-
-        return propertyMap;
     }
 
     @Override
