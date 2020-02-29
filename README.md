@@ -19,10 +19,34 @@ Slime World Manager is a Minecraft plugin that implements the Slime Region Forma
 ## Using E-SWM in your plugin
 
 #### Maven
-**No repo yet**
-
+(No releases yet, but you can use the snapshots repo: https://repo.andrei1058.com/snapshots)
+```
+<repositories>
+  <repository>
+    <id>eswm-repo</id>
+    <url>https://repo.andrei1058.com/releases</url>
+  </repository>
+</repositories>
+```
+```
+<dependencies>
+  <dependency>
+    <groupId>com.grinderwolf.eswm</groupId>
+    <artifactId>eswm-api</artifactId>
+    <version>INSERT LATEST VERSION HERE</version>
+  </dependency>
+</dependencies>
+```
 #### Gradle
-**No repo yet**
+```
+repositories {
+    maven { url "https://repo.andrei1058.com/releases/" }
+}
+
+dependencies {
+    compileOnly group: "com.grinderwolf.eswm", name: "eswm-api", version: "INSERT LATEST VERSION HERE";
+}
+```
 
 #### Javadocs
 **Not visible on pages yet**
