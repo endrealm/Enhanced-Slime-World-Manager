@@ -40,16 +40,16 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: plugin
-          path: '*slimeworldmanager-plugin/target/target'
+          path: slimeworldmanager-plugin/target/target
 
       - name: Upload API artifact
         uses: actions/upload-artifact@v1
         with:
           name: api
-          path: '*slimeworldmanager-api/target'
+          path: slimeworldmanager-api/target
 
       - name: Upload Classmodifier artifact
         uses: actions/upload-artifact@v1
         with:
           name: classmodifier
-          path: '*slimeworldmanager-classmodifier/target'
+          path: slimeworldmanager-classmodifier/target
