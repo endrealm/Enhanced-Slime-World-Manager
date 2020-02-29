@@ -61,16 +61,6 @@ public interface SlimeWorld {
     Collection<CompoundTag> getWorldMaps();
 
     /**
-     * Returns the properties of the world. These properties are automatically
-     * kept up-to-date when the world is loaded and its properties are updated.
-     *
-     * @return A {@link SlimeProperties} object with all the current properties of the world.
-     * @deprecated see {@link #getPropertyMap()}.
-     */
-    @Deprecated
-    SlimeProperties getProperties();
-
-    /**
      * Returns the property map.
      *
      * @return A {@link SlimePropertyMap} object containing all the properties of the world.
@@ -134,38 +124,4 @@ public interface SlimeWorld {
      * @return true if the world is locked, false otherwise
      */
     boolean isLocked();
-
-    /**
-     * All the currently-available properties of the world.
-     *
-     * @deprecated see {@link SlimePropertyMap}
-     */
-    @Getter
-    @Builder(toBuilder = true)
-    @Deprecated
-    class SlimeProperties {
-
-        private double spawnX;
-        @Builder.Default
-        private double spawnY = 255;
-        private double spawnZ;
-
-        private int difficulty;
-
-        @Accessors(fluent = true)
-        @Builder.Default
-        private boolean allowMonsters = true;
-        @Accessors(fluent = true)
-        @Builder.Default
-        private boolean allowAnimals = true;
-
-        @Wither
-        private boolean readOnly;
-
-        @Builder.Default
-        private boolean pvp = true;
-
-        @Builder.Default
-        private String environment = "NORMAL";
-    }
 }

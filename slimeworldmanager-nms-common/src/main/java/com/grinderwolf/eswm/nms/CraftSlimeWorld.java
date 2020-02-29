@@ -101,19 +101,6 @@ public class CraftSlimeWorld implements SlimeWorld {
         return world;
     }
 
-    @Override
-    public SlimeWorld.SlimeProperties getProperties() {
-        return SlimeWorld.SlimeProperties.builder().spawnX(propertyMap.getInt(SlimeProperties.SPAWN_X))
-                .spawnY(propertyMap.getInt(SlimeProperties.SPAWN_Y))
-                .spawnZ(propertyMap.getInt(SlimeProperties.SPAWN_Z))
-                .environment(propertyMap.getString(SlimeProperties.ENVIRONMENT))
-                .pvp(propertyMap.getBoolean(SlimeProperties.PVP))
-                .allowMonsters(propertyMap.getBoolean(SlimeProperties.ALLOW_MONSTERS))
-                .allowAnimals(propertyMap.getBoolean(SlimeProperties.ALLOW_ANIMALS))
-                .difficulty(Difficulty.valueOf(propertyMap.getString(SlimeProperties.DIFFICULTY).toUpperCase()).getValue())
-                .readOnly(readOnly).build();
-    }
-
     // World Serialization methods
 
     public byte[] serialize() {
