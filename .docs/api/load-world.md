@@ -4,7 +4,7 @@ SlimePlugin plugin = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWor
 ```
 Now, you need a loader. A SlimeLoader is a class that reads and stores worlds from a data source. In this case, we'll be using the MySQL loader:
 ```java
-SlimeLoader sqlLoader = plugin.getLoader("mysql");
+SlimeLoader sqlLoader = plugin.getLoader(SlimeLoader.MYSQL);
 ```
 
 Before actually loading the world, you need a SlimePropertyMap Object. Check the [property api documentation](properties.md) for further details.

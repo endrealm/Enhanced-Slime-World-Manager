@@ -4,7 +4,7 @@ SlimePlugin plugin = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWor
 
 File worldDir = new File("my_world_foler");
 String worldName = "my_world";
-SlimeLoader loader = plugin.getLoader("mysql");
+SlimeLoader loader = plugin.getLoader(SlimeLoader.MYSQL);
 
 try {
     // Note that this method should be called asynchronously
