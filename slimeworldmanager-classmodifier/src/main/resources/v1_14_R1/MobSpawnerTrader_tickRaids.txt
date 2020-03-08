@@ -1,5 +1,5 @@
 {
-    if (ClassModifier.isCustomWorld($0.b)) {
+    if (com.grinderwolf.eswm.clsm.ClassModifier.isCustomWorld($0.b)) {
         return;
     }
 }

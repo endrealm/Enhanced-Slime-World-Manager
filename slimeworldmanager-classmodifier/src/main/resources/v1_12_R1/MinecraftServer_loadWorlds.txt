@@ -1,5 +1,5 @@
 {
-    net.minecraft.server.v1_12_R1.WorldServer[] defaultWorlds = (net.minecraft.server.v1_12_R1.WorldServer[]) ClassModifier.getDefaultWorlds();
+    net.minecraft.server.v1_12_R1.WorldServer[] defaultWorlds = (net.minecraft.server.v1_12_R1.WorldServer[]) com.grinderwolf.eswm.clsm.ClassModifier.getDefaultWorlds();
     
     if (defaultWorlds != null) {
         System.out.println("Overriding default worlds");
