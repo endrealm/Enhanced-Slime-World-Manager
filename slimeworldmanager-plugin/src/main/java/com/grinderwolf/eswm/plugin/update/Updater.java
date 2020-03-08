@@ -24,7 +24,7 @@ public class Updater implements Listener {
         String currentVersionString = SWMPlugin.getInstance().getDescription().getVersion();
 
         if (currentVersionString.equals("${project.version}")) {
-            Logging.warning("You are using a custom version of SWM. Update checking is disabled.");
+            Logging.warning("You are using a custom version of E-SWM. Update checking is disabled.");
             outdatedVersion = false;
             return;
         }
@@ -32,7 +32,7 @@ public class Updater implements Listener {
         Version currentVersion = new Version(currentVersionString);
 
         if (currentVersion.getTag().toLowerCase().endsWith("snapshot")) {
-            Logging.warning("You are using a snapshot version of SWM. Update checking is disabled.");
+            Logging.warning("You are using a snapshot version of E-SWM. Update checking is disabled.");
             outdatedVersion = false;
             return;
         }
@@ -53,11 +53,11 @@ public class Updater implements Listener {
         outdatedVersion = result > 0;
 
         if (result == 0) {
-            Logging.info("You are running the latest version of Slime World Manager.");
+            Logging.info("You are running the latest version of Enhanced Slime World Manager.");
         } else if (outdatedVersion) {
-            Logging.warning("You are running an outdated version of Slime World Manager. Please download the latest version at SpigotMC.org.");
+            Logging.warning("You are running an outdated version of Enhanced Slime World Manager. Please download the latest version at SpigotMC.org.");
         } else {
-            Logging.warning("You are running an unreleased version of Slime World Manager.");
+            Logging.warning("You are running an unreleased version of Enhanced Slime World Manager.");
         }
     }
 
@@ -65,8 +65,8 @@ public class Updater implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (outdatedVersion && ConfigManager.getMainConfig().getUpdaterOptions().isMessageEnabled() && player.hasPermission("swm.updater")) {
-            player.sendMessage(Logging.COMMAND_PREFIX + "This server is running an outdated of Slime World Manager. Please download the latest version at SpigotMC.org.");
+        if (outdatedVersion && ConfigManager.getMainConfig().getUpdaterOptions().isMessageEnabled() && player.hasPermission("eswm.updater")) {
+            player.sendMessage(Logging.COMMAND_PREFIX + "This server is running an outdated of Enhanced Slime World Manager. Please download the latest version at SpigotMC.org.");
         }
     }
 

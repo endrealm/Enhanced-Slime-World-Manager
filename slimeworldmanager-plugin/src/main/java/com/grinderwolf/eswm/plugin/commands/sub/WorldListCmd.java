@@ -21,7 +21,7 @@ public class WorldListCmd implements Subcommand {
 
     private final String usage = "list [slime] [page]";
     private final String description = "List all worlds. To only list slime worlds, use the 'slime' argument.";
-    private final String permission = "swm.worldlist";
+    private final String permission = "eswm.worldlist";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

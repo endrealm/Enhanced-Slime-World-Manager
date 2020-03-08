@@ -96,7 +96,7 @@ public class LoaderUtils {
                 ((UpdatableLoader) loader).update();
             } catch (UpdatableLoader.NewerDatabaseException e) {
                 Logging.error("Data source " + dataSource + " version is " + e.getDatabaseVersion() + ", while" +
-                        " this SWM version only supports up to version " + e.getCurrentVersion() + ".");
+                        " this E-SWM version only supports up to version " + e.getCurrentVersion() + ".");
                 return;
             } catch (IOException ex) {
                 Logging.error("Failed to check if data source " + dataSource + " is updated:");

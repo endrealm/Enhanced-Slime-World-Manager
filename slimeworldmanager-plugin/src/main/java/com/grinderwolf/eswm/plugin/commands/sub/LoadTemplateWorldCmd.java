@@ -27,7 +27,7 @@ public class LoadTemplateWorldCmd implements Subcommand {
 
     private final String usage = "load-template <template-world> <world-name>";
     private final String description = "Creates a temporary world using another as a template. This world will never be stored.";
-    private final String permission = "swm.loadworld.template";
+    private final String permission = "eswm.loadworld.template";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

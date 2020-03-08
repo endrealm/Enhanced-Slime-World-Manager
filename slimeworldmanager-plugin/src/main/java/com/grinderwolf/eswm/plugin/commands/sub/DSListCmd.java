@@ -22,7 +22,7 @@ public class DSListCmd implements Subcommand {
 
     private final String usage = "dslist <data-source> [page]";
     private final String description = "List all worlds inside a data source.";
-    private final String permission = "swm.dslist";
+    private final String permission = "eswm.dslist";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

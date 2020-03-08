@@ -27,7 +27,7 @@ public class LoadWorldCmd implements Subcommand {
 
     private final String usage = "load <world>";
     private final String description = "Load a world.";
-    private final String permission = "swm.loadworld";
+    private final String permission = "eswm.loadworld";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {
@@ -93,7 +93,7 @@ public class LoadWorldCmd implements Subcommand {
                     ex.printStackTrace();
                 } catch (NewerFormatException ex) {
                     sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Failed to load world " + worldName + ": this world" +
-                            " was serialized with a newer version of the Slime Format (" + ex.getMessage() + ") that SWM cannot understand.");
+                            " was serialized with a newer version of the Slime Format (" + ex.getMessage() + ") that E-SWM cannot understand.");
                 } catch (UnknownWorldException ex) {
                     sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Failed to load world " + worldName +
                             ": world could not be found (using data source '" + worldData.getDataSource() + "').");

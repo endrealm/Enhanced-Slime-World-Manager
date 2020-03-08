@@ -41,9 +41,9 @@ public class CommandManager implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.AQUA + "Slime World Manager" + ChatColor.GRAY + " is a plugin that implements the Slime Region Format, " +
+            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.AQUA + "Enhanced Slime World Manager" + ChatColor.GRAY + " is a plugin that implements the Slime Region Format, " +
                     "designed by the Hypixel Dev Team to load and save worlds more efficiently. To check out the help page, type "
-                    + ChatColor.YELLOW + "/swm help" + ChatColor.GRAY + ".");
+                    + ChatColor.YELLOW + "/eswm help" + ChatColor.GRAY + ".");
 
             return true;
         }
@@ -51,7 +51,7 @@ public class CommandManager implements CommandExecutor {
         Subcommand command = commands.get(args[0]);
 
         if (command == null) {
-            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Unknown command. To check out the help page, type " + ChatColor.GRAY + "/swm help" + ChatColor.RED + ".");
+            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Unknown command. To check out the help page, type " + ChatColor.GRAY + "/eswm help" + ChatColor.RED + ".");
 
             return true;
         }
@@ -62,7 +62,7 @@ public class CommandManager implements CommandExecutor {
             return true;
         }
 
-        if (!command.getPermission().equals("") && !sender.hasPermission(command.getPermission()) && !sender.hasPermission("swm.*")) {
+        if (!command.getPermission().equals("") && !sender.hasPermission(command.getPermission()) && !sender.hasPermission("eswm.*")) {
             sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "You do not have permission to perform this command.");
 
             return true;
@@ -72,7 +72,7 @@ public class CommandManager implements CommandExecutor {
         System.arraycopy(args,1, subCmdArgs, 0, subCmdArgs.length);
 
         if (!command.onCommand(sender, subCmdArgs)) {
-            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Command usage: /swm " + ChatColor.GRAY + command.getUsage() + ChatColor.RED + ".");
+            sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Command usage: /eswm " + ChatColor.GRAY + command.getUsage() + ChatColor.RED + ".");
         }
 
         return true;

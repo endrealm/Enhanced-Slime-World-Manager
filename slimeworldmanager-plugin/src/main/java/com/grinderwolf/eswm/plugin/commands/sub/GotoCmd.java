@@ -16,7 +16,7 @@ public class GotoCmd implements Subcommand {
 
     private final String usage = "goto <world> [player]";
     private final String description = "Teleport yourself (or someone else) to a world.";
-    private final String permission = "swm.goto";
+    private final String permission = "eswm.goto";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

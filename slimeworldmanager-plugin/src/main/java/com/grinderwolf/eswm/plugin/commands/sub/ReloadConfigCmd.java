@@ -16,7 +16,7 @@ public class ReloadConfigCmd implements Subcommand {
 
     private final String usage = "reload";
     private final String description = "Reloads the config files.";
-    private final String permission = "swm.reload";
+    private final String permission = "eswm.reload";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

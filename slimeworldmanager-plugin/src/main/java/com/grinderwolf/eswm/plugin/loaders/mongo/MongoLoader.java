@@ -40,7 +40,7 @@ public class MongoLoader extends UpdatableLoader {
 
     // World locking executor service
     private static final ScheduledExecutorService SERVICE = Executors.newScheduledThreadPool(2, new ThreadFactoryBuilder()
-            .setNameFormat("SWM MongoDB Lock Pool Thread #%1$d").build());
+            .setNameFormat("E-SWM MongoDB Lock Pool Thread #%1$d").build());
 
     private final Map<String, ScheduledFuture> lockedWorlds = new HashMap<>();
 
@@ -88,7 +88,7 @@ public class MongoLoader extends UpdatableLoader {
                 Filters.eq("locked", false))).cursor();
 
         if (documents.hasNext()) {
-            Logging.warning("Your SWM MongoDB database is outdated. The update process will start in 10 seconds.");
+            Logging.warning("Your E-SWM MongoDB database is outdated. The update process will start in 10 seconds.");
             Logging.warning("Note that this update will make your database incompatible with older SWM versions.");
             Logging.warning("Make sure no other servers with older SWM versions are using this database.");
             Logging.warning("Shut down the server to prevent your database from being updated.");

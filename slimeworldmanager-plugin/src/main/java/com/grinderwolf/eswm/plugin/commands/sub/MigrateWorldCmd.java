@@ -24,7 +24,7 @@ public class MigrateWorldCmd implements Subcommand {
 
     private final String usage = "migrate <world> <new-data-source>";
     private final String description = "Migrate a world from one data source to another.";
-    private final String permission = "swm.migrate";
+    private final String permission = "eswm.migrate";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

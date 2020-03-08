@@ -27,7 +27,7 @@ public class CreateWorldCmd implements Subcommand {
 
     private final String usage = "create <world> <data-source>";
     private final String description = "Create an empty world.";
-    private final String permission = "swm.createworld";
+    private final String permission = "eswm.createworld";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {

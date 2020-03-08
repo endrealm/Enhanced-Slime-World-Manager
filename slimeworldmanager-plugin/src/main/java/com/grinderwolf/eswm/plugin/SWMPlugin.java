@@ -112,7 +112,7 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
 
         new Metrics(this);
 
-        getCommand("swm").setExecutor(new CommandManager());
+        getCommand("eswm").setExecutor(new CommandManager());
         getServer().getPluginManager().registerEvents(new WorldUnlocker(), this);
 
         if (ConfigManager.getMainConfig().getUpdaterOptions().isEnabled()) {

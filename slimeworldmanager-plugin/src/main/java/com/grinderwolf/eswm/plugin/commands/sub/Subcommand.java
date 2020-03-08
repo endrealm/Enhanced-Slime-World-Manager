@@ -4,10 +4,10 @@ import org.bukkit.command.CommandSender;
 
 public interface Subcommand {
 
-    public boolean onCommand(CommandSender sender, String[] args);
+    boolean onCommand(CommandSender sender, String[] args);
 
-    public String getUsage();
-    public String getDescription();
+    String getUsage();
+    String getDescription();
 
     default boolean inGameOnly() {
         return false;
