@@ -56,13 +56,13 @@ public class LoaderUtils {
 
         // File loader
         DatasourcesConfig.FileConfig fileConfig = config.getFileConfig();
-        registerLoader("file", new FileLoader(new File(fileConfig.getPath())));
+        registerLoader(SlimeLoader.FILE, new FileLoader(new File(fileConfig.getPath())));
 
         // Mysql loader
         DatasourcesConfig.MysqlConfig mysqlConfig = config.getMysqlConfig();
         if (mysqlConfig.isEnabled()) {
             try {
-                registerLoader("mysql", new MysqlLoader(mysqlConfig));
+                registerLoader(SlimeLoader.MYSQL, new MysqlLoader(mysqlConfig));
             } catch (SQLException ex) {
                 Logging.error("Failed to establish connection to the MySQL server:");
                 ex.printStackTrace();
@@ -74,7 +74,7 @@ public class LoaderUtils {
 
         if (mongoConfig.isEnabled()) {
             try {
-                registerLoader("mongodb", new MongoLoader(mongoConfig));
+                registerLoader(SlimeLoader.MONGODB, new MongoLoader(mongoConfig));
             } catch (MongoException ex) {
                 Logging.error("Failed to establish connection to the MongoDB server:");
                 ex.printStackTrace();

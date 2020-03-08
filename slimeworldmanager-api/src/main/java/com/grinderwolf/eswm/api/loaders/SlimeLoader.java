@@ -14,6 +14,19 @@ import java.util.List;
 public interface SlimeLoader {
 
     /**
+     * Reference name of the default mysql source
+     */
+    public static final String MYSQL = "mysql";
+    /**
+     * Reference name of the default mongodb source
+     */
+    public static final String MONGODB = "mongodb";
+    /**
+     * Reference name of the default file source
+     */
+    public static final String FILE = "file";
+
+    /**
      * Load a world's data file. In case {@code readOnly} is false,
      * the world automatically gets locked so no other server
      * can access it in write-mode.

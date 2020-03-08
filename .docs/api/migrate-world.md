@@ -3,7 +3,7 @@ To migrate a world you need three things: a world name, the data source where th
 SlimePlugin plugin = (SlimePlugin) Bukkit.getPluginManager().getPlugin("SlimeWorldManager");
 
 String worldName = "my_world";
-SlimeLoader currentLoader = plugin.getLoader("mysql");
+SlimeLoader currentLoader = plugin.getLoader(SlimeLoader.MYSQL);
 SlimeLoader newLoader = plugin.getLoader("mongodb");
 
 try {
