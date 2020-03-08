@@ -18,11 +18,11 @@ public class HelpCmd implements Subcommand {
         sender.sendMessage(Logging.COMMAND_PREFIX + "Command list:");
 
         for (Subcommand cmd : CommandManager.getInstance().getCommands()) {
-            if (cmd.inGameOnly() && !(sender instanceof Player) || (!cmd.getPermission().equals("") && !sender.hasPermission(cmd.getPermission()) && !sender.hasPermission("swm.*"))) {
+            if (cmd.inGameOnly() && !(sender instanceof Player) || (!cmd.getPermission().equals("") && !sender.hasPermission(cmd.getPermission()) && !sender.hasPermission("eswm.*"))) {
                 continue;
             }
 
-            sender.sendMessage(ChatColor.GRAY + "  -" + ChatColor.AQUA + "/swm " + cmd.getUsage() + ChatColor.GRAY + " - " + cmd.getDescription());
+            sender.sendMessage(ChatColor.GRAY + "  -" + ChatColor.AQUA + "/eswm " + cmd.getUsage() + ChatColor.GRAY + " - " + cmd.getDescription());
         }
 
         return true;

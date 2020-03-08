@@ -22,7 +22,7 @@ public class CloneWorldCmd implements Subcommand {
 
     private final String usage = "clone-world <template-world> <world-name> [new-data-source]";
     private final String description = "Clones a world";
-    private final String permission = "swm.cloneworld";
+    private final String permission = "eswm.cloneworld";
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {
@@ -103,7 +103,7 @@ public class CloneWorldCmd implements Subcommand {
                     ex.printStackTrace();
                 } catch (NewerFormatException ex) {
                     sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Failed to load world " + templateWorldName + ": this world" +
-                            " was serialized with a newer version of the Slime Format (" + ex.getMessage() + ") that SWM cannot understand.");
+                            " was serialized with a newer version of the Slime Format (" + ex.getMessage() + ") that E-SWM cannot understand.");
                 } catch (UnknownWorldException ex) {
                     sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "Failed to load world " + templateWorldName +
                             ": world could not be found (using data source '" + worldData.getDataSource() + "').");

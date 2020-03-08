@@ -27,7 +27,7 @@ public class DeleteWorldCmd implements Subcommand {
 
     private final String usage = "delete <world> [data-source]";
     private final String description = "Delete a world.";
-    private final String permission = "swm.deleteworld";
+    private final String permission = "eswm.deleteworld";
 
     private final Cache<String, String[]> deleteCache = CacheBuilder.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES).build();
 
@@ -39,7 +39,7 @@ public class DeleteWorldCmd implements Subcommand {
 
             if (world != null) {
                 sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.RED + "World " + worldName + " is loaded on this server! Unload " +
-                        "it by running the command " + ChatColor.GRAY + "/swm unload " + worldName + ChatColor.RED + ".");
+                        "it by running the command " + ChatColor.GRAY + "/eswm unload " + worldName + ChatColor.RED + ".");
 
                 return true;
             }

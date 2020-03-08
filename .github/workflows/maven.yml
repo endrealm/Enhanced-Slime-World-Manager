@@ -36,8 +36,11 @@ jobs:
         wget -O spigot-1.9.jar https://cdn.getbukkit.org/spigot/spigot-1.9-R0.1-SNAPSHOT-latest.jar && mvn install:install-file -Dfile=spigot-1.9.jar -DgroupId=org.spigotmc -DartifactId=spigot -Dversion=1.9-R0.1-SNAPSHOT -Dpackaging=jar
         wget -O spigot-1.8.8.jar https://cdn.getbukkit.org/spigot/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar && mvn install:install-file -Dfile=spigot-1.8.8.jar -DgroupId=org.spigotmc -DartifactId=spigot -Dversion=1.8.8-R0.1-SNAPSHOT -Dpackaging=jar
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Deploy with Maven
+      env:
+        FTP_USR: ${{ secrets.FTP_USR }}
+        FTP_PASS: ${{ secrets.FTP_PASS }}
+      run: mvn -B clean deploy --file pom.xml -s ci_settings.xml
 
     - name: Upload Plugin artifact
       uses: actions/upload-artifact@v1

@@ -1,4 +1,4 @@
-# Enhanced Slime World Manager ![Maven Build](https://github.com/endrealm/Enhanced-Slime-World-Manager/workflows/Maven%20Build/badge.svg)
+# Enhanced Slime World Manager ![Release CI](https://github.com/endrealm/Enhanced-Slime-World-Manager/workflows/Release%20CI/badge.svg)
 
 **Legacy Slime World Manager Discord:**
 
@@ -53,15 +53,15 @@ dependencies {
 
 ## Wiki Overview
  * Plugin Usage
-    * [Installing Slime World Manager](.docs/usage/install.md)
-    * [Using Slime World Manager](.docs/usage/using.md)
+    * [Installing Enhanced Slime World Manager](.docs/usage/install.md)
+    * [Using Enhanced Slime World Manager](.docs/usage/using.md)
     * [Commands and permissions](.docs/usage/commands-and-permissions.md)
  * Configuration
     * [Setting up the data sources](.docs/config/setup-data-sources.md)
     * [Converting traditional worlds into the SRF](.docs/config/convert-world-to-srf.md)
     * [Configuring worlds](.docs/config/configure-world.md)
     * [Async world generation](.docs/config/async-world-generation.md)
- * SWM API
+ * E-SWM API
     * [Getting started](.docs/api/setup-dev.md)
     * [World Properties](.docs/api/properties.md)
     * [Loading a world](.docs/api/load-world.md)

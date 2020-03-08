@@ -28,7 +28,7 @@ public class MysqlLoader extends UpdatableLoader {
 
     // World locking executor service
     private static final ScheduledExecutorService SERVICE = Executors.newScheduledThreadPool(2, new ThreadFactoryBuilder()
-            .setNameFormat("SWM MySQL Lock Pool Thread #%1$d").build());
+            .setNameFormat("E-SWM MySQL Lock Pool Thread #%1$d").build());
 
     private static final int CURRENT_DB_VERSION = 1;
 
@@ -101,7 +101,7 @@ public class MysqlLoader extends UpdatableLoader {
             }
 
             if (version < CURRENT_DB_VERSION) {
-                Logging.warning("Your SWM MySQL database is outdated. The update process will start in 10 seconds.");
+                Logging.warning("Your E-SWM MySQL database is outdated. The update process will start in 10 seconds.");
                 Logging.warning("Note that this update might make your database incompatible with older SWM versions.");
                 Logging.warning("Make sure no other servers with older SWM versions are using this database.");
                 Logging.warning("Shut down the server to prevent your database from being updated.");

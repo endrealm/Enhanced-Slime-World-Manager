@@ -26,7 +26,7 @@ public class ImportWorldCmd implements Subcommand {
 
     private final String usage = "import <path-to-world> <data-source> [new-world-name]";
     private final String description = "Convert a world to the slime format and save it.";
-    private final String permission = "swm.importworld";
+    private final String permission = "eswm.importworld";
 
     private final Cache<String, String[]> importCache = CacheBuilder.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES).build();
 

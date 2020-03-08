@@ -15,7 +15,7 @@ public class VersionCmd implements Subcommand {
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {
-        sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.GRAY + "This server is running SWM " + ChatColor.YELLOW + "v" + SWMPlugin.getInstance()
+        sender.sendMessage(Logging.COMMAND_PREFIX + ChatColor.GRAY + "This server is running E-SWM " + ChatColor.YELLOW + "v" + SWMPlugin.getInstance()
                 .getDescription().getVersion() + ChatColor.GRAY + ", which supports up to Slime Format " + ChatColor.AQUA + "v" + SlimeFormat.SLIME_VERSION + ChatColor.GRAY + ".");
 
         return true;

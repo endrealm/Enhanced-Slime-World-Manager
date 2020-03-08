@@ -1,5 +1,5 @@
 {
-    if (ClassModifier.saveChunk($0.world, $1)) {
+    if (com.grinderwolf.eswm.clsm.ClassModifier.saveChunk($0.world, $1)) {
         return false;
     }
 }
