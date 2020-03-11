@@ -358,6 +358,10 @@ public class LoaderUtils {
                     // Biome array
                     int[] biomes;
                     int biomesArrayLength = version >= 8 ? dataStream.readInt() : 256;
+                    
+                    // Fallback to 256 if missing/invalid array length
+                    if(biomesArrayLength < 0)
+                        biomesArrayLength = 256;
 
                     if (worldVersion >= 0x04) {
                         biomes = new int[biomesArrayLength];
