@@ -5,7 +5,7 @@
     <groupId>com.grinderwolf.eswm</groupId>
     <artifactId>enhancedslimeworldmanager</artifactId>
     <packaging>pom</packaging>
-    <version>2.3.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>slimeworldmanager-api</module>
         <module>slimeworldmanager-nms-common</module>
