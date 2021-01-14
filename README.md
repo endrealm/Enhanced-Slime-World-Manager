@@ -1,3 +1,5 @@
+# Project support dropped [check out ASWM](https://github.com/Paul19988/Advanced-Slime-World-Manager)
+
 # Enhanced Slime World Manager ![Release CI](https://github.com/endrealm/Enhanced-Slime-World-Manager/workflows/Release%20CI/badge.svg)
 
 **Legacy Slime World Manager Discord:**
